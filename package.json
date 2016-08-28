@@ -1,6 +1,6 @@
 {
   "name": "react-isomorphic-demo",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A react ismorphic demo",
   "main": "bin/server.js",
   "scripts": {
