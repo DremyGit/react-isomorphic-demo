@@ -15,13 +15,21 @@ A react isomorphic demo app, using Webpack/Redux/Immutable.js... and reddit.com 
 
 ```
 // Install npm modules
-npm install
+$ npm install
 
 // Running with production mode
-npm start
+$ npm start
 
 // Or running with develop mode
-npm run start-dev
+$ npm run start-dev
+```
+
+As we know, the reddit.com can't be access in China, so if you have a proxy,
+you need add the HTTPS_PROXY environment variable when the server start,
+and your browser also need to config the proxy.
+
+```
+$ HTTPS_PROXY=http://proxy_server:port npm start
 ```
 
 ## What can I do with it?
