@@ -15,11 +15,11 @@ function fetchSubredditSuccess(data) {
   }
 }
 
+// Determine whether you should fetch data from API,
+// if don't, it will get more friendly experience.
 function shouldFetchSubreddit(subredditName, state) {
   return !(state.getIn(['subreddit', 'entities', subredditName]));
 }
-
-//test
 
 export const fetchSubredditIfNeed = (params) => {
   const subredditName = params.subredditName;
@@ -33,6 +33,8 @@ export const fetchSubredditIfNeed = (params) => {
             throw new Error('No data');
           }
           data.data.subredditName = subredditName;
+          // Using normalize to decompose the nested json object from API.
+          // It will be friendly for store structure of redux
           data = normalize(data.data, subredditSchema);
           return dispatch(fetchSubredditSuccess(data));
         });
